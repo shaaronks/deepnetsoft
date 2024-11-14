@@ -18,7 +18,7 @@ const Hero = () => {
       </p>
       <p className="text-base text-white-400 text-center font-kelly tracking-wide leading-slug max-w-2xl">
         Please take a look at our menu featuring food, drinks, and brunch. If
-        you'd like to place an order, use the "Order Online" button located
+        you&apos;d like to place an order, use the &quot;Order Online&quot; button located
         below the menu.
       </p>
     </div>

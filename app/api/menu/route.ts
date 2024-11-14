@@ -17,10 +17,11 @@ export async function POST(req: Request) {
       { message: "Menu added successfully", data: newMenu },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     // Return an error response
     return NextResponse.json(
-      { message: "Error adding menu", error: error.message },
+      { message: "Error adding menu", error: errorMessage },
       { status: 500 }
     );
   }
@@ -36,10 +37,11 @@ export async function GET() {
       { message: "Menus fetched successfully", data: menus },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     // Return an error response
     return NextResponse.json(
-      { message: "Error fetching menus", error: error.message },
+      { message: "Error fetching menus", error: errorMessage },
       { status: 500 }
     );
   }

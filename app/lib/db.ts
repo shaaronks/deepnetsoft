@@ -12,6 +12,9 @@ export async function connectToDB() {
     return cachedConnection;
   }
   try {
+    if (!process.env.DB_URI) {
+      throw new Error("DB_URI is not defined");
+    }
     // If no cached connection exists, establish a new connection to MongoDB
     const cnx = await mongoose.connect(process.env.DB_URI!);
     // Cache the connection for future use
@@ -21,6 +24,7 @@ export async function connectToDB() {
     // Return the newly established connection
     return cachedConnection;
   } catch (error) {
+    console.log("Error connecting to MongoDB");
     // If an error occurs during connection, log the error and throw it
     console.log(error);
     throw error;

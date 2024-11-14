@@ -78,7 +78,7 @@ const StepThree: React.FC<StepThreeProps> = ({
           {/* Item's Section Name */}
           <div className="flex flex-col gap-1.5 relative">
             <label className="block text-sm font-medium text-white text-opacity-75 font-kelly tracking-wider">
-              Item's Section Name
+              Item&apos;s Section Name
             </label>
             <div className="w-full h-fit relative">
               <input
